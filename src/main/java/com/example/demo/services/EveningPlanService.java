@@ -13,7 +13,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
+
+import static com.example.demo.Constant.RESET_TIME;
 
 @Service
 public class EveningPlanService {
@@ -24,7 +27,9 @@ public class EveningPlanService {
 
     //Will be mapped to DTO
     public List<EveningPlan> getEveningPlansByDate(LocalDate date) {
-        return eveningPlanRepository.findAllBySubmitted(date);
+        LocalDateTime startTime = LocalDateTime.of(date.minusDays(1), RESET_TIME);
+        LocalDateTime endTime = LocalDateTime.of(date, RESET_TIME);
+        return eveningPlanRepository.findAllBySubmittedBetween(startTime, endTime);
     }
 
     public void addEveningPlans(UserEveningPlanDto userEveningPlanDto) {

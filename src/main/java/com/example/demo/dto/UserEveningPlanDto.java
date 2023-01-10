@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class UserEveningPlanDto {
-    String username;
-    String mood;
-    String plans;
+    private String username;
+    private String mood;
+    private String plans;
 }

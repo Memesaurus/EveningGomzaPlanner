@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "eveningplans")
@@ -20,10 +21,10 @@ public class EveningPlan {
     private MyUser user;
     private String mood;
     private String plans;
-    private LocalDate submitted;
+    private LocalDateTime submitted;
 
     public void setEveningPlans(MoodValue mood, PlansValue plans) {
-        this.submitted = LocalDate.now();
+        this.submitted = LocalDateTime.now();
         this.mood = mood.getMoodValue();
         this.plans = plans.getPlansValue();
     }

@@ -22,6 +22,7 @@ public class EveningPlanController {
     }
 
     @PostMapping
+    @CrossOrigin
     public void submitPlans(@RequestBody UserEveningPlanDto userEveningPlanDto) {
         eveningPlanService.addEveningPlans(userEveningPlanDto);
     }

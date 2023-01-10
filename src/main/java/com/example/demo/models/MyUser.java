@@ -32,11 +32,10 @@ public class MyUser implements UserDetails {
     @OneToMany(mappedBy = "userId")
     private Set<Authority> authorities;
 
-    public MyUser(String username, String rawPassword, String givenAuthority) {
+    public MyUser(String username, String rawPassword) {
         this.username = username;
         this.password = PASSWORD_ENCODER.encode(rawPassword);
         this.enabled = true;
-        authorities = Set.of(new Authority(this.id, givenAuthority));
     }
 
     @Override

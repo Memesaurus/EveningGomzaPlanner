@@ -1,0 +1,37 @@
+.widgets {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.username {
+    text-align: right;
+    font-size: xx-large;
+    padding-right: 1%;
+}
+
+.formContainer {
+    height: 280px;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: grey solid 5px;
+    background-color: grey;
+    border-radius: 20px;
+    color: white;
+    text-shadow: 1px 0px 1px black;
+}
+
+.content {
+    padding-top: 10%;
+    width: 50%;
+    margin: auto;
+    font-size: xx-large;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+}

@@ -2,7 +2,7 @@ package com.example.demo.models;
 
 public enum PlansValue {
     LOL,
-    NOTLOL,
+    NOT_LOL,
     PIVO,
     LATE;
 

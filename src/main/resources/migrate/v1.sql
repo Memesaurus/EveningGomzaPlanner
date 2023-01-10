@@ -2,6 +2,7 @@ create table users (
     id identity not null primary key,
 	username varchar_ignorecase(50) not null unique,
 	email varchar_ignorecase(80) not null unique,
+	telegram varchar_ignorecase(50) unique,
 	password varchar_ignorecase(500) not null,
 	enabled boolean not null
 );
@@ -19,5 +20,5 @@ id identity not null primary key,
 userid bigint not null,
 mood varchar(50),
 plans varchar(50),
-answeredtoday boolean not null,
+submitted date not null,
 constraint fk_eveningplans_users foreign key(userid) references users(id));
